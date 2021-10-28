@@ -59,4 +59,311 @@ const calAgeExpression = function (birthYear, currentYear) {
   return currentYear - birthYear;
 };
 ```
+
+REMEMBER FUNCTION ARE JUST VALUES AT THE END OF THE DAY AND CAN BE STORED IN VARIABLES AND EVEN PASSED TO OTHER FUNCTION AS ARGUMENTS
 </details>
+
+<details>
+  <summary>What are the characteristics of an arrow function compared to regular functions?</summary>
+  - All values have implicit returns with one liners.
+
+  ```js
+  const calcAgeArrow = birthYear => 2037 - birthYear;
+  // Single params do not require parentheses
+  ```
+
+  - Multi-param functions need to use the parentheses
+
+  ```js
+  const calcAgeArrow = (birthYear, currentYear) => currentYear - birthYear;
+  ```
+
+  - Multi-line arrow functions need the curly brackets and an explicit return;
+
+  ```js
+  const yearsUntilRetirement = (birthYear) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  return retirement;
+  };
+  ```
+
+  Arrow functions do not get a this keyword
+</details>
+
+- Write a function DECLARATION that takes a persons age and that countries legal drinking age and returns true or false if that person is of legal drinking age.
+
+- The average age in Canada is 40. Write a function EXPRESSION that takes a persons age and returns 'above average age' or 'below average age' based on the persons age.
+
+- Write an arrow function that takes two numbers and returns the sum. Write it as one line.
+
+- Write a multi-line arrow function that takes two numbers and multiplies them, then returns a string with template literals. Ex.) 5 times 5 is 25.
+
+- Write a function that takes in a length and a width to calculate the area of a rectangle. Store the called function into a variable.
+
+- Write a function that takes in the variable that holds the result from the previous function as well as a height to calculate the volume of a rectangular prism.
+
+## Objects & Arrays
+
+```js
+const hotel = {
+  name: 'The Sheraton',
+  location: '1000 Burrard St Vancouver, BC',
+  rooms: 1500,
+  roomTypes: ['Single', 'Double', 'Suite', 'Themed'],
+  roomService: true,
+  starterMenu: ['Poutine', 'Salad', 'Chicken Fingers', 'Pot Stickers'],
+  mainMenu: ['Roast Duck', 'Beef Wellington', 'Seared Salmon', 'Canadian Pizza'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+}
+```
+The above object contains a few varied key value pairs, including a method to order a starter and main menu item based on the index of that item in it's array.
+
+<details>
+  <summary>What brackets are used with array destructuring?</summary>
+  Square brackets '[]'.
+  The destructured variable names can be whatever we want
+</details>
+
+<details>
+  <summary>What brackets are used for object destructuring?</summary>
+  Curly brackets '{}'
+  The destructured variable names must match what they are called inside the object
+</details>
+
+
+- Access the hotels name using dot notation.
+
+- Access the hotels location using square notation
+
+- Destructure the first 2 items in the main menu array
+
+- Destructure only the first and third items in the main menu array
+
+- The order function returns an array. Call it and destructure the returned array into a myStarter and myMain variable.
+
+- Destructure the hotel name, location and openingHours from the hotel object
+
+
+<details>
+  <summary>What is the spread operator and how does it work?</summary>
+  It makes a COPY of the original array and SPREADS all the items from that array into a new one.
+  Also helpful for joining two arrays or adding item to an existing one.
+
+  ```js
+    const array1 = [1, 2, 3]
+    const newArray = [...array1];
+
+    newArray.pop();
+    console.log(newArray);
+    console.log(array1);
+    // Doesn't mutate/change original array because the spread made a copy
+
+
+    const joinedArray = [...array1, ...newArray, "Meatball Sandwich"];
+    console.log(joinedArray);
+  ```
+</details>
+
+
+- Spread the starterMenu into a newStarterMenu variable and add a new starter item to the menu. Console log the new start menu.
+
+<details>
+  <summary>What is the difference between stored by reference and stored by value?</summary>
+  There are 2 main data types in JavaScript. Objects and Primitives. Because Objects (In JavaScript arrays, functions and other data structures are considered objects) can grow to a very large size they are stored in memory at a different location than primitives. 
+
+  The main takeaway is that because of how they are stored in memory, when working with objects (Arrays, functions etc.) you need to be careful not to alter the original.
+
+  ```js
+    const me = {
+      name: "Cam",
+      age: 30,
+    };
+
+    const friend = me;
+
+    friend.age = 29;
+
+    console.log(friend);
+
+    console.log(me);
+    // This alters the original object
+  ```
+
+  When working with reference types, we need to be careful of this. So there are some built in methods, techniques to use to ensure we don't cause bugs because of this behavior. Some built in methods automatically return a copy of the array, object etc. (Think Array.map())
+
+
+  ```js
+    const array1 = [1,2,3];
+    const array2 = array1;
+
+    arr2[0] = 5;
+
+    console.log(arr1);
+
+  ```
+
+  So from above we can also see the use case of how handy it can be to make a copy of an array using the spread operator.
+
+  ```js
+    const array3 = [4,5,6];
+
+    const newArray = [...arr3];
+
+    newArray[0] = 10;
+
+    console.log(newArray);
+
+    console.log(array3);
+  ```
+</details>
+
+
+- Use a for in loop to loop over and log out all the keys from the hotel object
+
+- Use the spread operator to join the starterMenu and the mainMenu into a fullMenu variable. Use a for of loop to loop over and log out all items in the fullMenu array.
+
+<details>
+  <summary>What are some characteristics/differences to keep in mind with how objects and arrays store data?</summary>
+  Arrays
+  - use when you need an ordered list (have an index)
+  - use when you need to manipulate the data (many built in methods Ex.) map, filter, reduce, forEach etc.)
+
+  Objects
+  - Can easily access data with . and bracket [] notation
+  - Can include functions in them to write your own methods
+  - Can use the this keyword
+  - Use especially when working with JSON
+</details>
+
+
+## Array Methods
+
+[Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods)
+
+Don't try to remember the syntax of each method, that will come with time or a google search. Remembering WHAT METHODS are available and WHAT THEY DO is much more helpful because it gives you a better sense of tools you have in your tool belt to accomplish a certain outcome. Ex.) "Oh I think I remember a method that could take a piece out of the middle of an array..." Googles "remove items from an array javascript" and the MDN Array.splice() link shows up.
+
+Because there are many helpful array methods, it is common to convert other data types (Ex.) strings) to arrays, do some work, then turn them back into the desired data type when you are finished.
+
+Get used to looking at MDN for documentation on different functions/methods. It is hard to read at first because there is a lot of information. You get used to it and will gain the ability to quickly skim for the information you need. It is a good skill to have.
+
+
+```js
+const arr = ["a", "b", "c", "d", "e"];
+```
+
+### Slice
+
+- Use slice() to remove the last 3 items from the array and store them in a variable. Console log your new variable and the original array. Was the original changed/mutated?
+- Use slice() to remove only c and d
+- Use slice() to start from a negative position Ex.) arr.slice(-2). Console log the returned value. Console log arr.slice(-1)
+- Use slice() to start from a position and go to a negative position. Ex.) arr.slice(1, -2)
+
+### Splice
+
+- Use splice() to remove the last 3 items from the array and store them in a variable. Console log your new variable and the original array. Was the original changed/mutated?
+
+
+### Reverse
+
+- Use reverse() on the array
+
+### Join
+
+- Use join(" - ") on the array
+
+### ForEach
+
+```js
+  const transactions = [200, 450, -400, 3000, -650, -130, 70, 1300];
+```
+
+- Loop over the transactions with forEach and if the number is greater that 0 console log 'I made $ dollars' or if less console log 'I spent $ dollars'
+
+- Many of the looping array methods have access to the index of that array. Add "Transaction #:" to each transaction
+Ex.)
+Transaction 1: I made $200
+Transaction 2: I made $450
+Transaction 3: I spent $400
+
+
+### Map
+
+- An interest rate is 1.1 . Loop over the array with map and calculate the interest on each transaction. Dont forget to return AND store the result in a variable when using map()
+
+Note the difference between forEach & map. forEach goes does it work, changing the data, while map will make a copy return a new array with the changes not affecting the original.
+
+### Filter
+
+- Use filter() on the array to return all numbers greater than 0
+- Did it mutate the original array?
+
+### Reduce
+
+- Use reduce to calculate the total balance after all transactions
+
+
+Read through the other array methods on MDN and try the others out for yourself.
+
+HANDY GUIDE
+
+Need - MUTATE THE ORIGINAL:
+
+Insert:
+.push (end)
+.unshift (start)
+
+Delete:
+.pop (end)
+.shift (start)
+.splice (any)
+
+Others:
+.reverse
+.sort
+.fill
+
+Need - A NEW ARRAY:
+.map (copy with a loop & callback)
+.filter (using a condition)
+.slice (copy of a portion or original)
+.concat (joining arrays)
+.flat (flatten as deep as needed)
+.flatMap (flattens 1 level with callback)
+
+Need - ARRAY INDEX:
+.indexOf (based on value)
+.findIndex (based on conditional)
+
+Need - ARRAY ELEMENT
+.find (based on conditional)
+
+Need - ARRAY INCLUDES
+.includes (based on value)
+.some (based on conditional)
+.every (based on conditional)
+
+Need - A NEW STRING
+.join (based on separator)
+
+Need - TRANSFORM A VALUE
+.reduce() (boil down to a single value of any type even a new array or object)
+
+Need - TO LOOP AN ARRAY
+.forEach (based on callback/doesn't create a new array just loops over it)
