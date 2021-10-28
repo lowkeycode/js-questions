@@ -340,30 +340,33 @@ Others:
 .fill
 
 Need - A NEW ARRAY:
-.map (copy with a loop & callback)
-.filter (using a condition)
-.slice (copy of a portion or original)
-.concat (joining arrays)
-.flat (flatten as deep as needed)
-.flatMap (flattens 1 level with callback)
+- .map (copy with a loop & callback)
+- .filter (using a condition)
+- .slice (copy of a portion or original)
+- .concat (joining arrays)
+- .flat (flatten as deep as needed)
+- .flatMap (flattens 1 level with callback)
 
 Need - ARRAY INDEX:
-.indexOf (based on value)
-.findIndex (based on conditional)
+- .indexOf (based on value)
+- .findIndex (based on conditional)
 
 Need - ARRAY ELEMENT
-.find (based on conditional)
+- .find (based on conditional)
 
 Need - ARRAY INCLUDES
-.includes (based on value)
-.some (based on conditional)
-.every (based on conditional)
+- .includes (based on value)
+- .some (based on conditional)
+- .every (based on conditional)
 
 Need - A NEW STRING
-.join (based on separator)
+- .join (based on separator)
 
 Need - TRANSFORM A VALUE
-.reduce() (boil down to a single value of any type even a new array or object)
+- .reduce() (boil down to a single value of any type even a new array or object)
 
 Need - TO LOOP AN ARRAY
-.forEach (based on callback/doesn't create a new array just loops over it)
+- .forEach (based on callback/doesn't create a new array just loops over it)
+
+
+### 
