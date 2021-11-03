@@ -148,6 +148,22 @@ REMEMBER FUNCTION ARE JUST VALUES AT THE END OF THE DAY AND CAN BE STORED IN VAR
 
 - Create a function that takes in a weekday. If the weekday is Monday console log "Mondays can fuck off and all!". If the week day is Wednesday console log "Ooooo hump day ;)". If the weekday is Friday console log "Mandatory eat a poutine day". Inside the function perform the above 4 different ways. Use 3 single, separate if statements. Use chained if and if else statements. Use a switch statement. Use a ternary (only for monday & friday).
 
+<details>
+  <summary>What are the falsy values in JavaScript? What are the truthy values?</summary>
+  Falsy:
+  - false (The keyword false)
+  - 0 (The Number zero)
+  - -0 (The number negative zero)
+  - 0n (The BigInt zero)
+  - "", '', `` (An empty String)
+  - null (null - the absence of any value)
+  - undefined (undefined the primitive value)
+  - NaN (not a number)
+
+  Truthy: 
+  - EVERYTHING ELSE
+</details>
+
 
 ## Features of JavaScript as a Language
 
@@ -511,4 +527,54 @@ Need - TO LOOP AN ARRAY
 - .forEach (based on callback/doesn't create a new array just loops over it)
 
 
-### 
+### Strings
+
+A handy thing to do is to convert a String to an Array to get access to the Array methods. Strings however do come with many useful built in methods.
+[String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods)
+
+```js
+const string = "1,2,3,4,5";
+
+const stringArray = Array.from(string);
+const spreadedArray = [...string];
+const splitArray = string.split(',');
+
+console.log(stringArray);
+console.log(spreadedArray);
+console.log(splitArray);
+```
+
+### Slice
+
+- An airplane has middle seats that contain the letter B or E. Create a function that takes in a single seat number and slices the letter to check if the seat is a middle seat or not and console logs an appropriate message. Use the following seats. 11B, 23C, 3E.
+
+### ToLowerCase/Trim
+
+- Write a function that confirms two emails are equal when entered with incorrect casing and additional spaces. Email 1: "hello@gmail.com". Email 2: "   Hello@gmAil.Com". Use the toLowerCase() and trim() methods.
+
+### Replace
+
+- Write a function to convert a price in euros (288,97£) to USD. Use replace() to change the comma to a period and the pound sign to a dollar sign.
+
+### Includes/StartsWith/EndsWith
+
+- Write a function that takes in the following string "He spiked his hair green to support his iguana". Use includes() to see if it includes(), startsWith() or endsWith() words of your choice.
+
+### Split
+
+- Split the string from the previous question on all the spaces. 
+
+### PadStart/PadEnd
+
+- Create a function that takes in a string. padStar() five characters of your choice and padEnd() five characters of your choice.
+
+
+### Repeat
+
+- Call and console lof the result of calling repeat() on any string
+
+### More String Questions...
+
+- Write a function to take in a single  fullname string (first and last) Ex.) 'haNnah monTana'. Change the first letter of each name to be uppercase and all following letters lowerase. Ex.) 'haNnah monTana' --> 'Hannah Montana'
+
+- Create a function that takes in a 16 digit credit card number as a string. Ex.) "4724025869694674". Slice() the beginning four digits and padStart() the beginning with an "X"  based on the length of numbers that were sliced off. Ex.) "4724025869694674" --> "XXXX025869694674"
