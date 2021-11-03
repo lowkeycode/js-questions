@@ -527,7 +527,7 @@ Need - TO LOOP AN ARRAY
 - .forEach (based on callback/doesn't create a new array just loops over it)
 
 
-### Strings
+## String Methods
 
 A handy thing to do is to convert a String to an Array to get access to the Array methods. Strings however do come with many useful built in methods.
 [String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods)
@@ -578,3 +578,20 @@ console.log(splitArray);
 - Write a function to take in a single  fullname string (first and last) Ex.) 'haNnah monTana'. Change the first letter of each name to be uppercase and all following letters lowerase. Ex.) 'haNnah monTana' --> 'Hannah Montana'
 
 - Create a function that takes in a 16 digit credit card number as a string. Ex.) "4724025869694674". Slice() the beginning four digits and padStart() the beginning with an "X"  based on the length of numbers that were sliced off. Ex.) "4724025869694674" --> "XXXX025869694674"
+
+
+## Math Methods
+
+[Math Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math#static_methods)
+
+### Min/Max
+
+- Write a function that takes in an array of numbers. [1, 5, 7, 4, 31]. SPREAD the given array into the Math.min() & Math.max() methods and return the result.
+
+### Trunc/Floor/Ceil/Round/ToFixed
+
+- Given a positive & negative decimal number 5.95963 & -8.954878, store them each in a variable. Console log the result of running Math.trunc(), Math.floor(), Math.ceil() with the numbers as the arguments. Run .toFixed() on both the numbers. 
+
+### Abs
+
+- Given and positive and negative number 9 & -18 run Math.abs(). Handy for turning any number in to a positive
