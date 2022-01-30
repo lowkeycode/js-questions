@@ -266,7 +266,7 @@ Ex.) Very low level code in an Assembly language
 ```js
 const hotel = {
   name: 'The Sheraton',
-  location: '1000 Burrard St Vancouver, BC',
+  hotelLocation: '1000 Burrard St Vancouver, BC',
   rooms: 1500,
   roomTypes: ['Single', 'Double', 'Suite', 'Themed'],
   roomService: true,
@@ -316,7 +316,7 @@ The above object contains a few varied key value pairs, including a method to or
 
 - The order function returns an array. Call it and destructure the returned array into a myStarter and myMain variable.
 
-- Destructure the hotel name, location and openingHours from the hotel object
+- Destructure the hotel name, hotelLocation and openingHours from the hotel object
 
 
 <details>
